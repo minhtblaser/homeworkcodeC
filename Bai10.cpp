@@ -10,8 +10,9 @@ void input(int a[], int n){
 int max (int a[], int n){
     int max = a[0];
     for (int i = 1; i < n; i++){
-        if (max < a[i])
+        if (max < a[i]){
             max = a[i];
+        }
         // return max;
     }
     return max;
@@ -20,10 +21,11 @@ int max (int a[], int n){
 int min (int a[], int n){
     int min = a[0];
     for (int i = 1; i < n; i++){
-        if (min > a[i]) 
+        if (min > a[i]){
             min = a[i];
-    }
-       return min;
+        }
+      }
+     return min;
 }
 
 int main(){
