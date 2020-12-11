@@ -35,4 +35,7 @@ int main(){
     printf("\nDescending number is: ");
     output (a,n);
     return 0;
-}   
+}  
+
+
+
