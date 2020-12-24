@@ -117,8 +117,8 @@ void printValue(Student output){
 void printValue(Students output){
     printf("\n list of students:");
     for(int position=0; position<output.amount;position ++){
-        printValue(output.students[position]);
-    }
+        printValue(output.students[position]);  
+    }       
 }
 void ascSortByGPA(Students &source){
     Student temp;
@@ -160,7 +160,7 @@ void printAmountStudentsHaveScholarship(Students source){
 void digitsStudentsHaveScholarship(Students source){
     int counter = 0;
     printf("\nlist of students have scholarship: ");
-    for(int position = 0; position < source.amount;position++){
+    for(int position = 0; position < source.amount;position++   ){
         if(source.students[position].gpa>=7){
             printValue(source.students[position]);  
         }
