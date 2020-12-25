@@ -14,6 +14,8 @@ void printResult(Points source);
 void findMaxDistance(Points source);
 void printLinecutOY(Points source);
 float theLengthOfCordinates(Points source);
+void checkBelongToPart1(Points source);
+int linecut_Oy(Points source);
 int main(){
     Points list;
     enter(list);
@@ -21,6 +23,7 @@ int main(){
     printResult(list);
     findMaxDistance(list);
     printLinecutOY(list);
+    checkBelongToPart1(list);
     return 0;
 }
 void enter(Points &input){
@@ -57,8 +60,9 @@ void findMaxDistance(Points source){
     for(int i = 2; i<=source.amount; i++){
         if(max <fabs(source.points[i].y)){
             max = fabs(source.points[i].y);
-               printf("\nThe max distance is %.2f include points: \n", max);
+                printf("\nThe max distance is %.2f include points: \n", max);
         }
+
     }
     for(int i =1; i<source.amount;i++){
         if(fabs(source.points[i].y) == max){
@@ -73,7 +77,7 @@ int linecut_Oy(Points source){
         for(int j = i+1; j<=source.amount;j++){
             if((source.points[i].x * source.points[j].x <= 0) && (fabs(source.points[i].x)+fabs(source.points[j].x)>0)){
                 count++;
-                printf("straight segment %d%d cut vertical axis",i,j);
+                printf("straight segment %d,%d cut vertical axis",i,j);
             }
             return count;
         }
@@ -81,5 +85,16 @@ int linecut_Oy(Points source){
 }
 void printLinecutOY(Points source){
     int result = linecut_Oy(source);
-    printf("your result is %d", result);
+    printf("\nyour result is %d", result);
 }
+void checkBelongToPart1(Points source){
+    printf("\n\nQuestion4: ");
+    for(int i = 1; i<=source.amount; i++){
+        if(source.points[i].x > 0 && source.points[i].y>0){
+            printf("\nthe cordinate (%.2f, %.2f) belong to part 1", source.points[i].x, source.points[i].y);
+        } else {
+            printf("\nthe cordinate (%.2f, %.2f) don't belong to part 1", source.points[i].x, source.points[i].y);
+        }
+    }
+}
+
